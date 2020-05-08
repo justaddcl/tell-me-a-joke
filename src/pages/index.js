@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+
+import { useJoke } from '../context/JokeContext';
 import Loading from '../components/Loading';
 import Error from '../components/Error';
 import Joke from '../components/Joke';
@@ -11,7 +13,7 @@ const Messages = styled.div`
 `;
 
 export default () => {
-  const [joke, setJoke] = useState('');
+  const { setJoke } = useJoke();
   const [clicked, setClicked] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
@@ -54,7 +56,7 @@ export default () => {
         {loading && <Loading />}
         {error && <Error />}
       </Messages>
-      <Joke joke={joke} />
+      <Joke />
       <Button onClick={renderJoke}>
         {`Tell me a${clicked ? 'nother' : ''} joke!`}
       </Button>
