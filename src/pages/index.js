@@ -56,7 +56,7 @@ export default () => {
         {loading && <Loading />}
         {error && <Error />}
       </Messages>
-      <Joke joke={joke} />
+      <Joke />
       <Button onClick={renderJoke}>
         {`Tell me a${clicked ? 'nother' : ''} joke!`}
       </Button>
