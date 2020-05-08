@@ -2,11 +2,11 @@ import React from 'react';
 import Setup from './Setup';
 import Punchline from './Punchline';
 
-const Joke = ({ joke }) => {
+const Joke = () => {
   return (
     <>
-      <Setup setup={joke.setup} />
-      <Punchline punchline={joke.punchline} />
+      <Setup />
+      <Punchline />
     </>
   );
 };
